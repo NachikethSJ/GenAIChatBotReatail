@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Chatbot in JavaScript | CodingNepal</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google Fonts Link For Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="chatbot-wrapper">
+      <div class="card-box">
+        <div class="card">
+          <div class="img-box">
+            <img src="./chatbot.png" alt="Avatar" style="width:50%">
+          </div>          
+          <div class="url-container">
+            <p style="color:#3e3a3a">Create a Website assistant for my website</p>
+            <p><input id="url-input" type="url" value="" name="website_url"></p>
+          </div>
+          <button class="generate-button" style="vertical-align:middle" onclick="handleGenerateChat()"><span>Generate </span></button>
+        </div>
+      </div>      
+      <div class="chatbot-container">
+        <button class="chatbot-toggler">
+          <span class="material-symbols-rounded">mode_comment</span>
+          <span class="material-symbols-outlined">close</span>
+        </button>
+        <div class="chatbot">
+          <header>
+            <h2>Chatbot</h2>
+            <span class="close-btn material-symbols-outlined">close</span>
+          </header>
+          <ul class="chatbox">
+            <li class="chat incoming">
+              <span class="material-symbols-outlined">smart_toy</span>
+              <p>Hi there 👋<br>I'm a virtual assistant for your website <br>How can I help??</p>
+            </li>
+          </ul>
+          <div class="chat-input">
+            <textarea placeholder="Enter a message..." spellcheck="false" required></textarea>
+            <span id="send-btn" class="material-symbols-rounded">send</span>
+          </div>
+        </div>
+
+      </div>
+    </div> 
+
+  </body>
+</html>
