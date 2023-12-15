@@ -4,6 +4,8 @@ from pydantic import BaseModel
 import get_txt 
 import PnP_hack as hack_main
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
@@ -26,6 +28,7 @@ class Query_url(BaseModel):
     url_domain: str | None = None
 
 @app.post("/get_txt")
+
 async def root(request_body:Base_url):
     try:
         url = request_body.url
@@ -51,6 +54,7 @@ async def root(request_body:Query_url):
     except Exception as err:
         print("---error----",str(err))
         return {"statusCode":500,"message": "Internal Server error"}
-
+    
+app.mount("/static", StaticFiles(directory="static"), name="static")
 if __name__=="__main__":
     uvicorn.run("main:app",host='0.0.0.0', port=3000, reload=True, workers=3)
